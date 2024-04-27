@@ -1,0 +1,62 @@
+﻿@model Usuario
+
+@{
+    ViewData["Title"] = "Usuario";
+}
+
+
+<hr />
+<div class="row">
+    <div class="col-md">
+        <div class="card">
+            <div class="card-header alert-info">Cliente</div>
+            <div class="card-body" style="justify-content: space-around">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <label asp-for="Usnome" class="control-label"></label>
+                            <input asp-for="Usnome" class="form-control" />
+                            <span asp-validation-for="Usnome" class="text-danger"></span>
+                        </div>
+                        <div class="col-md">
+                            <label asp-for="Usemail" class="control-label"></label>
+                            <input asp-for="Usemail" class="form-control" />
+                            <span asp-validation-for="Usemail" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md">
+                            <label asp-for="Ussenha" class="control-label"></label>
+                            <input asp-for="Ussenha" class="form-control" />
+                            <span asp-validation-for="Ussenha" class="text-danger"></span>
+                        </div>
+                        <div class="col-md">
+                            <label asp-for="Ustelefone" class="control-label"></label>
+                            <input asp-for="Ustelefone" class="form-control" />
+                            <span asp-validation-for="Ustelefone" class="text-danger"></span>
+                        </div>
+                        <div class="col-md">
+                            <label asp-for="Usdatanascimento" class="control-label"></label>
+                            <input asp-for="Usdatanascimento" class="form-control" type="datetime-local" />
+                            <span asp-validation-for="Usdatanascimento" class="text-danger"></span>
+                        </div>
+                        <div class="col-md">
+                            <label asp-for="Usdataregistro" class="control-label"></label>
+                            <input asp-for="Usdataregistro" class="form-control" type="datetime-local" />
+                            <span asp-validation-for="Usdataregistro" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div style="display: flex; justify-content: center">
+                        <input type="submit" value="Salvar" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @*@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}*@
+}

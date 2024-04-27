@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SMART.Web.Models.Usuario>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Usnome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usemail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ussenha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ustelefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usdatanascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usdataregistro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usnome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usemail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ussenha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ustelefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usdatanascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usdataregistro)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Usid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Usid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Usid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

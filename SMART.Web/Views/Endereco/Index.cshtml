@@ -1,0 +1,77 @@
+﻿@model IEnumerable<SMART.Web.Models.Endereco>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Enlogradouro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ennumero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Encomplemento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Enbairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Encidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Enestado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Encep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnidusuarioNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enlogradouro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ennumero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Encomplemento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enbairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Encidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enestado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Encep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnidusuarioNavigation.Usid)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Enid">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Enid">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Enid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

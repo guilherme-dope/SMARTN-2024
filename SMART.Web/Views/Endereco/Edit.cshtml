@@ -1,0 +1,73 @@
+﻿@model SMART.Web.Models.Endereco
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Edit</h1>
+
+<h4>Endereco</h4>
+<hr />
+<div class="row">
+    < class="col-md-4">
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="Enid" type="hidden" />
+        <div class="form-group">
+            <label asp-for="Enlogradouro" class="control-label"></label>
+            <input asp-for="Enlogradouro" class="form-control" />
+            <span asp-validation-for="Enlogradouro" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ennumero" class="control-label"></label>
+            <input asp-for="Ennumero" class="form-control" />
+            <span asp-validation-for="Ennumero" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Encomplemento" class="control-label"></label>
+            <input asp-for="Encomplemento" class="form-control" />
+            <span asp-validation-for="Encomplemento" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Enbairro" class="control-label"></label>
+            <input asp-for="Enbairro" class="form-control" />
+            <span asp-validation-for="Enbairro" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Encidade" class="control-label"></label>
+            <input asp-for="Encidade" class="form-control" />
+            <span asp-validation-for="Encidade" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Enestado" class="control-label"></label>
+            <input asp-for="Enestado" class="form-control" />
+            <span asp-validation-for="Enestado" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Encep" class="control-label"></label>
+            <input asp-for="Encep" class="form-control" />
+            <span asp-validation-for="Encep" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-4" style="margin-left: 300px">
+                @Html.LabelFor(model => model.Enidusuario, htmlAttributes: new { @class = "form-label col-md" })
+            <div class="col-md">
+                    @Html.DropDownListFor(model => model.Enidusuario,
+                             new SelectList(ViewBag.usuarios, "Usid", "Usnome"),
+                             new { @class = "form-select", @required = "required" })
+            </div>
+        </div>
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </form>
+</div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
